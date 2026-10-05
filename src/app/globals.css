@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-dark: #0a0a0a;
+  --color-card: #141414;
+  --color-brand-pink: #d91b5c;
+  --color-brand-pink-bright: #ff107a;
+  --color-brand-yellow: #f6c016;
+  --color-brand-yellow-bright: #ffdf00;
+  --color-brand-green: #2ab835;
+  --color-brand-green-bright: #39ff14;
+  --color-brand-purple: #4a154b;
+  --color-brand-purple-bright: #9d00ff;
+
+  --font-sans: var(--font-montserrat), sans-serif;
+  --font-marker: var(--font-marker), cursive;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--color-dark);
+    color: white;
+    /* Urban brick/texture background simulation */
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(217, 27, 92, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(42, 184, 53, 0.08) 0%, transparent 40%),
+      linear-gradient(rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.95)),
+      url('https://images.unsplash.com/photo-1550684376-efcbd6e3f031?auto=format&fit=crop&w=1920&q=80');
+    background-attachment: fixed;
+    background-size: cover;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .logo-circle {
+    background: radial-gradient(circle, var(--color-brand-yellow) 30%, var(--color-brand-purple) 70%, var(--color-dark) 100%);
+    box-shadow: 0 0 25px rgba(255, 16, 122, 0.4);
+  }
+  
+  .title-stroke-white {
+    text-shadow: 2px 2px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+  }
+
+  .text-stroke-green {
+    -webkit-text-stroke: 2px var(--color-brand-green-bright);
+    color: transparent;
+  }
+
+  .btn-hover-fx {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,16,122,0.6)];
+  }
+}
+
+/* Custom splatters component that tailwind doesn't easily handle with one class */
+.splatters-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    radial-gradient(circle at 80% 20%, var(--color-brand-pink-bright) 1px, transparent 2px),
+    radial-gradient(circle at 75% 25%, var(--color-brand-yellow-bright) 2px, transparent 3px),
+    radial-gradient(circle at 20% 80%, var(--color-brand-green-bright) 1.5px, transparent 2.5px),
+    radial-gradient(circle at 15% 75%, var(--color-brand-pink-bright) 2px, transparent 3px);
+  background-size: 150px 150px;
+  opacity: 0.4;
 }

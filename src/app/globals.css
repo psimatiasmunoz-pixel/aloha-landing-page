@@ -3,14 +3,14 @@
 @theme {
   --color-dark: #0a0a0a;
   --color-card: #141414;
-  --color-brand-pink: #d91b5c;
-  --color-brand-pink-bright: #ff107a;
-  --color-brand-yellow: #f6c016;
-  --color-brand-yellow-bright: #ffdf00;
-  --color-brand-green: #2ab835;
-  --color-brand-green-bright: #39ff14;
-  --color-brand-purple: #4a154b;
-  --color-brand-purple-bright: #9d00ff;
+  --color-brand-pink: #c4175c;
+  --color-brand-pink-bright: #e81d6e;
+  --color-brand-yellow: #d4a017;
+  --color-brand-yellow-bright: #e8b825;
+  --color-brand-green: #2d8c35;
+  --color-brand-green-bright: #38a842;
+  --color-brand-purple: #3d1140;
+  --color-brand-purple-bright: #5c1a60;
 
   --font-sans: var(--font-montserrat), sans-serif;
   --font-marker: var(--font-marker), cursive;

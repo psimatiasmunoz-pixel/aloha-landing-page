@@ -15,17 +15,17 @@ export default function Home() {
       </a>
 
       {/* NAVBAR */}
-      <nav className="fixed w-full z-40 bg-dark/90 backdrop-blur-md border-b border-brand-pink/20 py-4 px-6 md:px-12 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-full logo-circle flex items-center justify-center font-marker text-dark text-xl">A</div>
-          <span className="font-marker text-2xl tracking-widest text-white group-hover:text-brand-pink-bright transition-colors">ALOHA</span>
+      <nav className="fixed w-full z-40 bg-dark/90 backdrop-blur-md border-b border-brand-purple/30 py-3 px-6 md:px-12 flex justify-between items-center">
+        <Link href="/" className="flex items-center gap-3 group">
+          <Image src="/images/aloha-logo.jpg" alt="Aloha Crew Logo" width={48} height={48} className="rounded-full ring-2 ring-brand-purple-bright/50 group-hover:ring-brand-pink-bright transition-all" />
+          <span className="font-marker text-2xl tracking-widest text-white group-hover:text-brand-pink-bright transition-colors hidden sm:inline">ALOHA CREW</span>
         </Link>
         <div className="hidden md:flex gap-6 font-semibold text-sm">
           <Link href="#clases" className="hover:text-brand-green-bright transition-colors">Clases</Link>
           <Link href="#galeria" className="hover:text-brand-yellow-bright transition-colors">Comunidad</Link>
           <Link href="#ubicacion" className="hover:text-brand-pink-bright transition-colors">Ubicación</Link>
         </div>
-        <a href={WAP_LINK} target="_blank" rel="noopener noreferrer" className="bg-brand-pink text-white px-5 py-2 rounded-full font-bold btn-hover-fx text-sm">
+        <a href={WAP_LINK} target="_blank" rel="noopener noreferrer" className="bg-brand-pink-bright text-white px-5 py-2 rounded-full font-bold btn-hover-fx text-sm">
           Consultar
         </a>
       </nav>
@@ -40,11 +40,16 @@ export default function Home() {
           </div>
           
           <div className="z-10 max-w-4xl flex flex-col items-center">
-            <div className="bg-brand-pink-bright/20 border border-brand-pink-bright text-brand-pink-bright px-4 py-1 rounded-full text-xs font-bold tracking-widest mb-6 backdrop-blur-sm">
+            {/* Logo Hero */}
+            <div className="mb-8 relative">
+              <div className="absolute inset-0 bg-brand-purple/30 rounded-full blur-3xl scale-150"></div>
+              <Image src="/images/aloha-logo.jpg" alt="Aloha Crew - Espíritu en Movimiento" width={220} height={220} className="relative rounded-full ring-4 ring-brand-purple-bright/40 shadow-[0_0_60px_rgba(92,26,96,0.5)]" priority />
+            </div>
+            <div className="bg-brand-purple-bright/20 border border-brand-purple-bright text-brand-yellow-bright px-4 py-1 rounded-full text-xs font-bold tracking-widest mb-6 backdrop-blur-sm">
               📍 LINARES, CHILE
             </div>
             <h1 className="font-marker text-5xl md:text-7xl lg:text-8xl mb-4 leading-tight">
-              BAILA. <span className="text-brand-green-bright">DISFRUTA.</span> CONECTA.
+              BAILA. <span className="text-brand-pink-bright">DISFRUTA.</span> CONECTA.
             </h1>
             <p className="text-xl md:text-2xl font-bold mb-6 text-gray-200">
               Clases de baile urbano en Linares para niños, jóvenes y adultos.
@@ -53,10 +58,10 @@ export default function Home() {
               En Aloha creemos que bailar es mucho más que aprender pasos. Es moverte, expresarte, ganar confianza y formar parte de una comunidad donde puedes ser tú.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <a href={WAP_LINK} target="_blank" rel="noopener noreferrer" className="bg-brand-green-bright text-dark px-8 py-4 rounded-full font-bold text-lg btn-hover-fx shadow-[0_0_20px_rgba(42,184,53,0.4)]">
+              <a href={WAP_LINK} target="_blank" rel="noopener noreferrer" className="bg-brand-pink-bright text-white px-8 py-4 rounded-full font-bold text-lg btn-hover-fx shadow-[0_0_20px_rgba(232,29,110,0.4)]">
                 Reserva tu clase
               </a>
-              <a href={WAP_LINK} target="_blank" rel="noopener noreferrer" className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-dark transition-colors">
+              <a href={WAP_LINK} target="_blank" rel="noopener noreferrer" className="bg-transparent border-2 border-brand-yellow-bright text-brand-yellow-bright px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-yellow-bright hover:text-dark transition-colors">
                 Hablar por WhatsApp
               </a>
             </div>
@@ -234,14 +239,19 @@ export default function Home() {
         </section>
 
         {/* 8. CONVERSIÓN */}
-        <section className="w-full py-24 bg-brand-pink-bright text-dark text-center z-10 px-6">
-          <h2 className="font-marker text-6xl md:text-8xl mb-6 title-stroke-white text-dark">¿Lista para empezar?</h2>
-          <p className="text-2xl font-bold max-w-2xl mx-auto mb-12 text-white">
-            No importa si nunca has bailado. Escríbenos, consulta por horarios y encuentra la clase ideal para ti.
-          </p>
-          <a href={WAP_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-dark text-white px-10 py-5 rounded-full font-black text-2xl hover:scale-105 hover:bg-brand-yellow hover:text-dark transition-all duration-300 shadow-2xl">
-            Quiero bailar
-          </a>
+        <section className="w-full py-24 bg-gradient-to-br from-brand-purple via-brand-purple-bright to-brand-pink text-white text-center z-10 px-6 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <Image src="/images/aloha-logo.jpg" alt="" fill className="object-contain" />
+          </div>
+          <div className="relative z-10">
+            <h2 className="font-marker text-6xl md:text-8xl mb-6">¿Lista para empezar?</h2>
+            <p className="text-2xl font-bold max-w-2xl mx-auto mb-12 text-white/90">
+              No importa si nunca has bailado. Escríbenos, consulta por horarios y encuentra la clase ideal para ti.
+            </p>
+            <a href={WAP_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-brand-yellow-bright text-dark px-10 py-5 rounded-full font-black text-2xl hover:scale-105 hover:bg-white transition-all duration-300 shadow-2xl">
+              Quiero bailar
+            </a>
+          </div>
         </section>
 
         {/* 9. UBICACIÓN & 10. INSTAGRAM */}
@@ -305,14 +315,15 @@ export default function Home() {
       </main>
 
       {/* 12. FOOTER */}
-      <footer className="w-full bg-dark border-t border-gray-900 py-12 text-center relative z-10 px-6">
-        <h2 className="font-marker text-4xl text-white mb-2">ALOHA</h2>
-        <p className="text-brand-yellow-bright font-marker text-xl mb-8">Espíritu en movimiento</p>
+      <footer className="w-full bg-dark border-t border-brand-purple/30 py-12 text-center relative z-10 px-6">
+        <Image src="/images/aloha-logo.jpg" alt="Aloha Crew" width={80} height={80} className="mx-auto rounded-full mb-4 ring-2 ring-brand-purple-bright/40" />
+        <h2 className="font-marker text-3xl text-white mb-1">ALOHA CREW</h2>
+        <p className="text-brand-yellow-bright font-marker text-lg mb-8">Espíritu en movimiento</p>
         
         <p className="text-gray-400 mb-1">Clases de baile urbano</p>
         <p className="text-gray-400 mb-8">📍 Linares, Chile</p>
         
-        <div className="flex justify-center gap-8 mb-12">
+        <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
           <a href="https://instagram.com/aloha.ea" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-pink-bright transition-colors">
             Instagram: @aloha.ea
           </a>
@@ -321,7 +332,7 @@ export default function Home() {
           </a>
         </div>
         
-        <a href={WAP_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-dark px-8 py-3 rounded-full font-bold btn-hover-fx">
+        <a href={WAP_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-brand-pink-bright text-white px-8 py-3 rounded-full font-bold btn-hover-fx">
           Consultar clases
         </a>
       </footer>

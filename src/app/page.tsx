@@ -212,9 +212,9 @@ export default function Home() {
               </p>
             </div>
             <div className="md:w-1/2 flex justify-center">
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-brand-purple-bright p-2">
+              <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-brand-purple-bright p-2 shadow-[0_0_40px_rgba(92,26,96,0.5)]">
                 <div className="w-full h-full relative rounded-full overflow-hidden">
-                  <Image src="/images/media_1791173815438.jpg" alt="Caro Muñoz Albornoz" fill className="object-cover" />
+                  <Image src="/images/caro-munoz.jpg" alt="Caro Muñoz Albornoz - Profesora de Aloha Crew" fill className="object-cover object-top" />
                 </div>
               </div>
             </div>
